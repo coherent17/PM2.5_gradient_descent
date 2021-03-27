@@ -66,8 +66,6 @@ def gradient_descent(theta,X,T):
         cost_function.append(np.sum((hypothesis(theta,X)-T)**2)/len(X)/2)
         theta_grad=(1/N)*np.matmul((hypothesis(theta,X)-T),(X))
         theta-=learning_rate*theta_grad
-        if i %(iteration/10)==0:
-            print("it is the %d time of iterations, rmse is %.8lf and cost function is %.8lf" %(i,rmse(hypothesis(theta,X).reshape(len(X),),T),np.sum((hypothesis(theta,X)-T)**2)/len(X)/2))
     return theta,cost_function
 
 def gradient_descent_remove(theta,X,T):
